@@ -13,11 +13,8 @@ notebooks.map(notebook=>{
     product.innerHTML=
         `<p>${notebook.title}</p>
         <p>${notebook.price}</p>
-        ${notebook.image}
-        <img src=${notebook.image}>
-
+        <img src=${notebook.image} height='25'>
         `
-        // <img src=${notebook.image}/>
 
     container.appendChild(product);
 
