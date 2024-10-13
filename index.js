@@ -1,16 +1,13 @@
 import data from "./data.json" with {type: 'json'}
 
-console.log(data);
-
 const notebooks = data.notebooks;
 const crafts = data.crafts;
 const container = document.getElementsByClassName('grid')[0];
-console.log(notebooks);
 
 notebooks.map(notebook => {
     const card = document.createElement('div');
     card.classList.add('card');
-    card.innerHTML =`
+    card.innerHTML = `
         <p class='ptitle'>${notebook.title}</p>
         <img src=${notebook.image} height=100 width=100>
         <div class='card-footer'>
@@ -22,12 +19,21 @@ notebooks.map(notebook => {
         `
     container.appendChild(card);
 })
-const num=0;
-document.getElementsByClassName('add-btn').addEventListener('click', function() {
-    console.log('addEventListener');
+var num = 0;
+const btns = document.getElementsByClassName('add-btn')
+Array.from(btns).map(btn => btn.addEventListener('click', function () {
+    console.log(`addEventListener ${num}`);
     const element = document.getElementById('pay');
-    element.innerText(`(${num++})`);
-});
+    console.log(element);
+
+    element.innerText = `(${++num}) לתשלום`;
+}));
+// });(btn =>console.log(num++) )
+// btn.addEventListener('click', function() {
+// console.log('addEventListener');
+// const element = document.getElementById('pay');
+// element.innerText(`(${num++})`);
+// }))
 
 // const getProducts = async () => {
 //     const response = await fetch(`https://fakestoreapi.com/products/1`);
