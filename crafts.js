@@ -16,7 +16,7 @@ const container = document.getElementsByClassName('grid')[0];
 // if (page === 'notebooks')
 //     products = notebooks;
 // console.log(products)
-notebooks.map(notebook => {
+crafts.map(notebook => {
     const card = document.createElement('div');
     card.classList.add('card');
     card.innerHTML = `
